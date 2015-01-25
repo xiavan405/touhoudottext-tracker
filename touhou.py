@@ -22,7 +22,7 @@ networkTuple=[network,port,channel,nick]
 
 #bot settings
 botname='touhoudottxt-tracker'
-version='2.0 \'Hermit Purple\''
+version='2.0 \'Patchouli\''
 #changelog='Added error handling. Added @reply,RT,link, and note filters. Refactored twitter code (now 20% worse!). Added a small history buffer. Changed nick. Removed stability. Removed fun.'
 changelog='Maybe fixed twitter filters, shouldn\'t have to flush. Removed history buffer because it was worthless. Didn\'t fix timeline calls. Refactored irc methods to be extensible! Disabled auto refresh. Added manual refresh. Added s3cr3ts.'
 helptext='Available commands: <!txt>/<le touhou memes>, <!latest>, <!tttrefresh>, <!tttcl>, <!ttthelp>'
@@ -77,7 +77,11 @@ def runBot(twitterTuple,networkTuple,botTuple):
   
   #setup twitter respknses
   dioTriggers=['!dio','!DIO','it was me, Dio!']
-  dioResponses=['Mudada!','Muda Muda Muda!','How many breads have you eaten in your life?','Would a monkey dare fight a man?','Toki wa tomare. Time has stopped.','Checkmate da!','Road roller da!','WRYYYYYYYYYYYYYYYYYYYYYYYYY','Useless!','Za warudo!','ZA WALDO','The World. Time has stopped.','It\'s not enough that I should succeed -- others should fail.','*spits on father\'s grave*']
+  dioResponses=['Mudada!','Muda Muda Muda!','How many breads have you eaten in your life?'\
+  ,'Would a monkey dare fight a man?','Toki wa tomare. Time has stopped.','Checkmate da!'\
+  ,'Road roller da!','WRYYYYYYYYYYYYYYYYYYYYYYYYY','Useless!','Za warudo!','ZA WALDO'\
+  ,'The World. Time has stopped.','It\'s not enough that I should succeed -- others should fail.'\
+  ,'*spits on father\'s grave*']
   
   txtTriggers=['!txt','le touhou memes']
   txtResponses=generateTweets('touhoudottxt')
@@ -126,10 +130,7 @@ def runBot(twitterTuple,networkTuple,botTuple):
     respondTo(irc,channel,data,latestTriggers,latestResponses)
     respondTo(irc,channel,data,sackTriggers,sackResponses)
     respondTo(irc,channel,data,drilTriggers,drilResponses)
-    #respondTo(irc,channel,data,wolfpupyTriggers,wolfpupyResponses)
     respondTo(irc,channel,data,deuxTriggers,deuxResponses)
-    #respondTo(irc,channel,data,joeTriggers,joeResponses)
-    #respondTo(irc,channel,data,daveTriggers,daveResponses)
     print(data)
 
 runBot(twitterTuple,networkTuple,botTuple)
