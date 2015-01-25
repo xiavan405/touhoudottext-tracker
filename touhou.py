@@ -5,7 +5,7 @@ import socket
 import random
 
 #twitter config
-conKey='<consumer_secret>'
+conKey='<consumer_key>'
 conSecret='<consumer_secret>'
 userToken='<user_token>'
 tokenSecret='<user_secret>'
